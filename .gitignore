@@ -1,0 +1,4 @@
+secrets.yaml
+.dep_check
+requirements.lock
+charts/

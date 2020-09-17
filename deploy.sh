@@ -141,5 +141,3 @@ if [ -f "${cwd}/secrets.yaml" ]; then
 fi
 
 helm install "${RELEASE_NAME}" . "${HELM_CMD[@]}"
-
-watch -n1 "kubectl get all -n ${RELEASE_NAME}"
