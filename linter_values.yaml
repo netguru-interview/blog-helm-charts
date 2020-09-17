@@ -1,0 +1,4 @@
+postgresql:
+  postgresqlUsername: example
+  postgresqlPassword: example
+  postgresqlDatabase: example

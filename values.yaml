@@ -1,0 +1,27 @@
+environment: production
+flask_app_path: flaskblog/__init__.py
+
+image:
+  profile: shmileee
+
+backend:
+  replicaCount: 1
+
+  image:
+    name: backend
+    tag: alpha
+    pullPolicy: Always
+
+  ingress:
+    enabled: true
+    route:
+      hosts:
+        blog: blog.kloud-native.com
+
+  resources: {}
+
+postgresql:
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 250m

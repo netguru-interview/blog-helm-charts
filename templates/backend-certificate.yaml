@@ -1,0 +1,13 @@
+{{- $ingressRoute := .Values.backend.ingress.route -}}
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ .Release.Name }}-backend
+spec:
+  commonName: {{ $ingressRoute.hosts.blog }}
+  secretName: {{ .Release.Name }}-backend
+  dnsNames:
+    - {{ $ingressRoute.hosts.blog }}
+  issuerRef:
+    name: letsencrypt-live
+    kind: ClusterIssuer

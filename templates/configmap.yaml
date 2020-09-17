@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configuration
+  labels:
+    app.kubernetes.io/name: {{ .Release.Name }}-configuration
+    app.kubernetes.io/component: configuration
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ .Chart.Name }}
+data:
+  PROJECT_NAME: {{ .Release.Name }}
+  POSTGRESQL_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  POSTGRESQL_DATABASE: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  FLASK_APP: {{ .Values.flask_app_path | quote }}
+  FLASK_ENV: {{ .Values.environment | quote }}
