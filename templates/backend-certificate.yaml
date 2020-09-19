@@ -9,5 +9,5 @@ spec:
   dnsNames:
     - {{ $ingressRoute.hosts.blog }}
   issuerRef:
-    name: letsencrypt-live
+    name: letsencrypt-test
     kind: ClusterIssuer
