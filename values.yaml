@@ -9,7 +9,7 @@ backend:
 
   image:
     name: backend
-    tag: alpha
+    tag: latest
     pullPolicy: Always
 
   ingress:
